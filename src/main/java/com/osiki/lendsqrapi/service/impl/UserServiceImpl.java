@@ -1,8 +1,10 @@
 package com.osiki.lendsqrapi.service.impl;
 
+import com.osiki.lendsqrapi.entity.UserEntity;
 import com.osiki.lendsqrapi.model.User;
 import com.osiki.lendsqrapi.repository.UserRepository;
 import com.osiki.lendsqrapi.service.UserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,6 +20,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
-        return null;
+       UserEntity userEntity = new UserEntity();
+       BeanUtils.copyProperties(user, userEntity);
+
+       userRepository.save(userEntity);
+
+       return user;
+
     }
 }
