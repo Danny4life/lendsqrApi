@@ -2,6 +2,7 @@ package com.osiki.lendsqrapi.entity;
 
 import javax.persistence.*;
 
+import com.osiki.lendsqrapi.enums.Children;
 import com.osiki.lendsqrapi.enums.Gender;
 import lombok.Data;
 
@@ -19,6 +20,8 @@ public class UserDetailsEntity {
     private String emailAdd;
     private String bvn;
     private Gender gender;
+    private Children children;
+    private String type_of_residence;
 
 
 }
