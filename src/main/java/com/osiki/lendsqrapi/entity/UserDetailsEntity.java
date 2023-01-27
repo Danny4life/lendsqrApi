@@ -2,6 +2,7 @@ package com.osiki.lendsqrapi.entity;
 
 import javax.persistence.*;
 
+import com.osiki.lendsqrapi.enums.Gender;
 import lombok.Data;
 
 @Entity
@@ -17,6 +18,7 @@ public class UserDetailsEntity {
     private String phoneNumber;
     private String emailAdd;
     private String bvn;
+    private Gender gender;
 
 
 }
