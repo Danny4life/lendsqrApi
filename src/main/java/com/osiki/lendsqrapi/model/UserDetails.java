@@ -21,6 +21,9 @@ public class UserDetails extends Base{
     private Gender gender;
     private MaritalStatus maritalStatus;
     private Children children;
+
+    public UserDetails(long id, String fullName, String phoneNumber, String emailAdd, String bvn, String type_of_residence, Gender gender, MaritalStatus maritalStatus, Children children) {
+    }
 //    private String gender;
 //    private String maritalStatus;
 //    private String children;
