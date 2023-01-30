@@ -62,4 +62,23 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
         return userDetails;
     }
+
+    @Override
+    public UserDetails updateUser(Long id, UserDetails userDetails) {
+
+        UserDetailsEntity userDetailsEntity =
+                userDetailsRepository.findById(id).get();
+
+        userDetailsEntity.setFullName(userDetails.getFullName());
+        userDetailsEntity.setPhoneNumber(userDetails.getPhoneNumber());
+        userDetailsEntity.setEmailAdd(userDetails.getEmailAdd());
+        userDetailsEntity.setBvn(userDetails.getBvn());
+        userDetailsEntity.setType_of_residence(userDetails.getType_of_residence());
+        userDetailsEntity.setGender(userDetails.getGender());
+        userDetailsEntity.setMaritalStatus(userDetails.getMaritalStatus());
+        userDetailsEntity.setChildren(userDetails.getChildren());
+
+        userDetailsRepository.save(userDetailsEntity);
+        return userDetails;
+    }
 }
