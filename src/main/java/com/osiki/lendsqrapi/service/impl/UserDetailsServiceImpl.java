@@ -50,4 +50,16 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .collect(Collectors.toList());
         return userDetails;
     }
+
+    @Override
+    public UserDetails getUserInformationById(Long id) {
+
+       UserDetailsEntity userDetailsEntity =
+               userDetailsRepository.findById(id).get();
+
+       UserDetails userDetails = new UserDetails();
+       BeanUtils.copyProperties(userDetailsEntity, userDetails);
+
+        return userDetails;
+    }
 }
