@@ -9,4 +9,6 @@ public interface UserDetailsService {
     UserDetails createUserDetails(UserDetails userDetails);
 
     List<UserDetails> getUserInformation();
+
+    UserDetails getUserInformationById(Long id);
 }
