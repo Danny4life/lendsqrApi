@@ -15,7 +15,7 @@ public class UserDetailsEntity extends Base {
 
 //    @Id
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
+//
 //    private long id;
 
     private String fullName;

@@ -4,6 +4,8 @@ import com.osiki.lendsqrapi.model.UserDetails;
 import com.osiki.lendsqrapi.service.UserDetailsService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1/")
@@ -18,5 +20,13 @@ public class UserDetailsController {
     @PostMapping("/userDetails")
     public UserDetails createUserDetails(@RequestBody UserDetails userDetails){
         return userDetailsService.createUserDetails(userDetails);
+    }
+
+    @GetMapping("/userDetails")
+
+    public List<UserDetails> getUserInformation(){
+
+        return userDetailsService.getUserInformation();
+
     }
 }
