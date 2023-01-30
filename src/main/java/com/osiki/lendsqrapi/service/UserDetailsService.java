@@ -11,4 +11,6 @@ public interface UserDetailsService {
     List<UserDetails> getUserInformation();
 
     UserDetails getUserInformationById(Long id);
+
+    UserDetails updateUser(Long id, UserDetails userDetails);
 }
